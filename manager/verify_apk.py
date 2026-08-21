@@ -6,11 +6,11 @@ first certificate, and SHA-256s its DER bytes. Also flags v1 / v3 signatures,
 which the kernel rejects. No Android SDK / apksigner required.
 
 Usage:  python3 verify_apk.py <path-to.apk> [expected_sha256]
-Default expected hash = Aarsu primary cert baked into kernel/Kbuild.
+Default expected hash = Rapido primary cert baked into kernel/Kbuild.
 """
 import sys, struct, hashlib, zipfile
 
-EXPECTED = "d84856a879661525cce35c2073e7c216ff5c7426e547ceab829022e583790246"
+EXPECTED = "674b15d02ebff1ccf5e515ef2ae7c672309ef02d0a4502f5d976e97e26e407b7"
 
 V2_ID, V3_ID, V31_ID = 0x7109871a, 0xf05368c0, 0x1b93ad61
 MAGIC = b"APK Sig Block 42"
@@ -87,7 +87,7 @@ def main():
     print(f"v3 present : {v3}   (must be False)")
 
     ok = (digest == expected) and (len(cert) <= 1024) and (not v1) and (not v3)
-    print("\nRESULT     : " + ("PASS - Aarsu will be recognized" if ok
+    print("\nRESULT     : " + ("PASS - Rapido will be recognized" if ok
                                else "FAIL - see mismatched line(s) above"))
     sys.exit(0 if ok else 1)
 
