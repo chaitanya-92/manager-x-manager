@@ -16,7 +16,7 @@ plugins {
 val managerVersionCode: Int by rootProject.extra
 val managerVersionName: String by rootProject.extra
 
-// Load Rapido signing credentials from gitignored keystore.properties (project root).
+// Load Astrotalk signing credentials from gitignored keystore.properties (project root).
 // Sets the Gradle properties that the apksign plugin reads below.
 run {
     val keystorePropsFile = rootProject.file("keystore.properties")
@@ -42,7 +42,7 @@ apksign {
 }
 
 android {
-    namespace = "com.rapido.manager"
+    namespace = "com.astrotalk.manager"
 
     buildTypes {
         release {
@@ -87,7 +87,7 @@ android {
     applicationVariants.all {
         outputs.forEach {
             val output = it as BaseVariantOutputImpl
-            output.outputFileName = "Rapido_${managerVersionName}_${managerVersionCode}-$name.apk"
+            output.outputFileName = "Astrotalk_${managerVersionName}_${managerVersionCode}-$name.apk"
         }
         kotlin.sourceSets {
             getByName(name) {

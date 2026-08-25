@@ -123,13 +123,13 @@ endif
 KSU_NEW_DCACHE_FLUSH := $(shell grep -q __flush_dcache_area $(srctree)/arch/arm64/include/asm/cacheflush.h ; echo $$?)
 $(info -- KernelSU-Next new DCACHE flush: $(KSU_NEW_DCACHE_FLUSH))
 
-# Primary manager: Rapido (com.rapido.manager), RSA-2048, cert 715 bytes.
+# Primary manager: Astrotalk (com.astrotalk.manager), RSA-2048, cert 721 bytes.
 ifndef KSU_NEXT_MANAGER_SIZE
-KSU_NEXT_MANAGER_SIZE := 0x2cb
+KSU_NEXT_MANAGER_SIZE := 0x2d1
 endif
 
 ifndef KSU_NEXT_MANAGER_HASH
-KSU_NEXT_MANAGER_HASH := 674b15d02ebff1ccf5e515ef2ae7c672309ef02d0a4502f5d976e97e26e407b7
+KSU_NEXT_MANAGER_HASH := 87b15367b9b35431b501bd2f9e2737a701200231e46cf35d3472e1eaa52a4baa
 endif
 
 ifdef KSU_MANAGER_PACKAGE
