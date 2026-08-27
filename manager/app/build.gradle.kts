@@ -16,7 +16,7 @@ plugins {
 val managerVersionCode: Int by rootProject.extra
 val managerVersionName: String by rootProject.extra
 
-// Load Astrotalk signing credentials from gitignored keystore.properties (project root).
+// Load X-manager signing credentials from gitignored keystore.properties (project root).
 // Sets the Gradle properties that the apksign plugin reads below.
 run {
     val keystorePropsFile = rootProject.file("keystore.properties")
